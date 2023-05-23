@@ -12,3 +12,5 @@ Here are some of the key features of a scatter plot:
 * The pattern of the dots can be used to see if there is a relationship between the variables.
 
 Scatter plots are a powerful tool for visualizing data and identifying relationships between variables. They can be used in a variety of settings, including research, business, and education.
+
+Ref: https://youtu.be/7wf1HhYQiDg?t=376
