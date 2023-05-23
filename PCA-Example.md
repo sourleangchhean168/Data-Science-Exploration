@@ -1,4 +1,4 @@
-Sure. The code you provided is used to perform principal component analysis (PCA) on a dataset of survey responses. PCA is a dimensionality reduction technique that can be used to reduce the number of features in a dataset while preserving as much of the information as possible.
+The code is used to perform principal component analysis (PCA) on a dataset of survey responses. PCA is a dimensionality reduction technique that can be used to reduce the number of features in a dataset while preserving as much of the information as possible.
 
 The first step in the code is to import the necessary libraries:
 
