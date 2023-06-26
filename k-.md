@@ -64,4 +64,37 @@ Citations:
 [4] https://www.freecodecamp.org/news/how-to-extract-keywords-from-text-with-tf-idf-and-pythons-scikit-learn-b2a0f3d7e667/
 [5] https://kavita-ganesan.com/python-keyword-extraction/
 
-By Perplexity at https://www.perplexity.ai/search/36b56406-e747-4283-b769-3c74b84ed928
+The line `vectorizer = TfidfVectorizer()` creates an instance of the TfidfVectorizer class from the scikit-learn library. This class is used to convert a collection of raw documents to a matrix of TF-IDF features. The `TfidfVectorizer()` method takes several optional parameters that can be used to customize the vectorizer. By default, it uses the following settings:
+
+- `lowercase=True`: Convert all characters to lowercase before tokenizing.
+- `stop_words=None`: Remove stop words from the text. Stop words are common words that are usually removed from text because they do not carry much meaning, such as "the", "and", and "a".
+- `token_pattern='(?u)\\b\\w\\w+\\b'`: Use a regular expression to tokenize the text. This pattern matches all words that are at least two characters long.
+- `max_df=1.0`: Ignore terms that have a document frequency strictly higher than the given threshold.
+- `min_df=1`: Ignore terms that have a document frequency strictly lower than the given threshold.
+- `use_idf=True`: Enable inverse-document-frequency reweighting.
+- `norm='l2'`: Apply L2 normalization to the output vectors.
+
+The line `textual_features = vectorizer.fit_transform(textual_features['title'])` uses the `fit_transform()` method of the `TfidfVectorizer` class to convert the textual data into a matrix of TF-IDF features. The `fit_transform()` method fits the vectorizer to the data and transforms the data into a matrix of TF-IDF features. In this case, it takes the 'title' column of the 'data' dataframe and converts it to a matrix of TF-IDF features. The resulting matrix is assigned to the 'textual_features' variable.
+
+Citations:
+[1] https://kavita-ganesan.com/tfidftransformer-tfidfvectorizer-usage-differences/
+[2] https://programminghistorian.org/en/lessons/analyzing-documents-with-tfidf
+[3] https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/ch04.html
+[4] https://pythonprogramminglanguage.com/kmeans-text-clustering/
+[5] https://www.geeksforgeeks.org/sklearn-feature-extraction-with-tf-idf/
+
+The line `k = 5  # Number of clusters` sets the number of clusters to 5. This means that the k-means algorithm will group the data into 5 clusters. The number of clusters is a hyperparameter that needs to be set before running the algorithm. The optimal number of clusters depends on the data and the problem at hand. There are several methods to determine the optimal number of clusters, such as the elbow method, the silhouette method, and the gap statistic method[1][2].
+
+The line `kmeans = KMeans(n_clusters=k, random_state=42)` creates an instance of the KMeans class from the scikit-learn library and sets the number of clusters to 5 using the 'n_clusters' parameter. The 'random_state' parameter is set to 42 to ensure reproducibility of the results. The KMeans class is used to perform k-means clustering on the TF-IDF features.
+
+The line `kmeans.fit(textual_features)` fits the k-means model to the TF-IDF features. This means that the algorithm is trained on the data to learn the cluster centers and assign each data point to a cluster. The resulting model is stored in the 'kmeans' variable.
+
+The k-means algorithm is an unsupervised learning algorithm that groups data points into k clusters based on their similarity. The algorithm works by iteratively assigning data points to the nearest cluster center and updating the cluster centers based on the new assignments. The algorithm stops when the assignments no longer change or a maximum number of iterations is reached[3][4].
+
+Citations:
+[1] https://stackabuse.com/k-means-clustering-with-scikit-learn/
+[2] https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set
+[3] https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html
+[4] https://en.wikipedia.org/wiki/K-means_clustering
+
+
